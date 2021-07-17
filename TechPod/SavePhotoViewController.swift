@@ -16,31 +16,37 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet var DatePicker: UIDatePicker!
     @IBOutlet var memoLabel: UITextView!
     @IBOutlet weak var tagField: UITextField!
-
+    
+    var imageArray: [Data] = []
     
     //
     var originalImage: UIImage!
-    var saveData: UserDefaults = UserDefaults.standard
+    let saveData: UserDefaults = UserDefaults.standard
     
     var memo: String = ""
     
     var pickerView: UIPickerView = UIPickerView()
     let list = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         
         NameTextField.delegate = self
         memoLabel.delegate = self
         tagField.delegate = self
-        
+      
+        let imageArray = saveData.object(forKey: "image") as? [Data] ?? []
+//        self.IdolImageView.image = UIImage(data: imageArray[index])
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         memoLabel.text = memo
+        imageArray = saveData.object(forKey: "image") as? [Data] ?? []
+
         
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.tintColor = UIColor.black
@@ -57,23 +63,9 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
             }))
             
             present(alert, animated: true, completion: nil)
-            
-            
-        } else if IdolImageView.image == nil {
-            let alert: UIAlertController = UIAlertController(title: "写真を選んでください", message: nil, preferredStyle: .alert)
-            
-            
-            alert.addAction(UIAlertAction(
-                title: "OK", style: .default, handler: { action in
-                    //
-                    print("OKボタンが押されました")
-            }))
-            
-            present(alert, animated: true, completion: nil)
-            
-            self.navigationController?.popViewController(animated: true)
-            
+        
         } else {
+            
              // タイトル
              // いまtitlesに保存されてる配列をとってくる
              var titles = saveData.array(forKey: "titles") as? [String] ?? []
@@ -122,27 +114,14 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
                     self.navigationController?.popViewController(animated: true)
              }))
              
-             present(alert, animated: true, completion: nil)
-             
+            self.performSegue(withIdentifier: "CalendarViewController", sender: index)
+
         }
         
     }
     
-    @IBAction func openAlbum(){
-        
-        //
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            
-            //
-            let picker = UIImagePickerController()
-            picker.sourceType = .photoLibrary
-            picker.delegate = self
-            
-            picker.allowsEditing = true
-            
-            present(picker, animated: true, completion: nil)
-        }
-        
+    @IBAction func tapTextView() {
+        self.performSegue(withIdentifier: "toText", sender: index)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
@@ -163,9 +142,4 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
             vc.memo = self.memoLabel.text
         }
     }
-
-    @IBAction func tapTextView() {
-        self.performSegue(withIdentifier: "toText", sender: index)
-    }
-  
 }

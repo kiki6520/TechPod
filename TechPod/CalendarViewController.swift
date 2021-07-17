@@ -38,9 +38,7 @@ class CalenderViewController: UIViewController, FSCalendarDataSource, FSCalendar
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
-    
     // カレンダーに画像を表示
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         guard photosArray.count == dateStrArray.count else { return nil }
@@ -87,7 +85,6 @@ class CalenderViewController: UIViewController, FSCalendarDataSource, FSCalendar
         if let viewController = segue.destination as? MemoViewController {
             viewController.index = sender as? Int
         }
-        
     }
     
 }
