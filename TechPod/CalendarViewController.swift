@@ -18,14 +18,11 @@ class CalenderViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     override func viewWillAppear(_ animated: Bool) {
         photosArray = saveData.object(forKey: "photos") as? [Data] ?? []
-
+    
         dateStrArray = (saveData.object(forKey: "dates") as? [String] ?? []).map { str in
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd HH:mm:ss Z"
             return self.dateFormat(date: formatter.date(from: str)!)
-            
-            super.viewWillAppear(animated)
-            self.navigationController!.navigationBar.tintColor = UIColor.black
             
         }
         
@@ -33,6 +30,9 @@ class CalenderViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.delegate = self
         calendar.register(PhotoCalenderCell.self, forCellReuseIdentifier: "PhotoCalenderCell")
         calendar.reloadData()
+        
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.tintColor = UIColor.black
     }
     
     override func viewDidLoad() {

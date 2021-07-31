@@ -17,6 +17,8 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
     @IBOutlet var memoLabel: UITextView!
     @IBOutlet weak var tagField: UITextField!
     
+    var selectedImage: UIImage?
+    var dateStringArray = [String]()
     var imageArray: [Data] = []
     
     //
@@ -37,16 +39,28 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
         memoLabel.delegate = self
         tagField.delegate = self
       
-        let imageArray = saveData.object(forKey: "image") as? [Data] ?? []
-//        self.IdolImageView.image = UIImage(data: imageArray[index])
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentingViewController?.endAppearanceTransition()
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        presentingViewController?.beginAppearanceTransition(true, animated: animated)
+        presentingViewController?.endAppearanceTransition()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
+        presentingViewController?.beginAppearanceTransition(false, animated: animated)
+        
         memoLabel.text = memo
-        imageArray = saveData.object(forKey: "image") as? [Data] ?? []
-
+        imageArray = saveData.object(forKey: "photos") as? [Data] ?? []
+        dateStringArray = saveData.object(forKey: "dates") as? [String] ?? []
+        
+        IdolImageView.image = selectedImage
         
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.tintColor = UIColor.black
@@ -74,22 +88,20 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
              // 保存
              saveData.set(titles, forKey: "titles")
              
-             
              // 日付
              var dates = saveData.array(forKey: "dates") as? [String] ?? []
              
-             dates.append(DatePicker.date.description)
-             
-             saveData.set(dates, forKey: "dates")
-             
              // 写真
              var photos = saveData.array(forKey: "photos") as? [Data] ?? []
-             
-             if let photo = IdolImageView.image?.pngData() {
-                 photos.append(photo)
-             }
-             
-             saveData.set(photos, forKey: "photos")
+            
+            guard let photo = IdolImageView.image?.pngData() else { return }
+                
+            //保存
+            dates.append(DatePicker.date.description)
+            photos.append(photo)
+            
+            saveData.set(dates, forKey: "dates")
+            saveData.set(photos, forKey: "photos")
             
             //メモ
             var memos = saveData.array(forKey: "memos") as? [String] ?? []
@@ -114,11 +126,11 @@ class SavePhotoViewController: UIViewController, UITextFieldDelegate, UITextView
                     self.navigationController?.popViewController(animated: true)
              }))
              
-            self.performSegue(withIdentifier: "CalendarViewController", sender: index)
+//            self.performSegue(withIdentifier: "CalendarViewController", sender: index)
+        self.dismiss(animated: true, completion: nil)
 
         }
-        
-    }
+}
     
     @IBAction func tapTextView() {
         self.performSegue(withIdentifier: "toText", sender: index)

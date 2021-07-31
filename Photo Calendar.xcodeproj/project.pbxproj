@@ -11,9 +11,11 @@
 		1E54427924FA3BDB00575B8E /* sikaku.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1E54427824FA3BDB00575B8E /* sikaku.JPG */; };
 		1E58346A24C2EA6B009C806E /* SavePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58346924C2EA6B009C806E /* SavePhotoViewController.swift */; };
 		1E683378267E33B800085431 /* sikaku2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E683377267E33B700085431 /* sikaku2.jpg */; };
+		1E77D1AE26B545EE00CBE353 /* Monochrome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E77D1AC26B545ED00CBE353 /* Monochrome.jpg */; };
+		1E77D1AF26B545EE00CBE353 /* SepiaTone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1E77D1AD26B545EE00CBE353 /* SepiaTone.jpg */; };
+		1E77D1B126B5650100CBE353 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E77D1B026B5650100CBE353 /* FilterCell.swift */; };
 		1E9B849F258DDBFA00B5D4E5 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9B849E258DDBFA00B5D4E5 /* TextViewController.swift */; };
 		1EB011D7264686BB006EBC8A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB011D6264686BB006EBC8A /* PhotoViewController.swift */; };
-		1ED3A165256020F60082BBF7 /* share.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 1ED3A164256020F60082BBF7 /* share.JPEG */; };
 		1ED3A17025602C2A0082BBF7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3A16F25602C2A0082BBF7 /* TableViewController.swift */; };
 		1EE5DEA5249DEAD0004F0A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5DEA4249DEAD0004F0A98 /* AppDelegate.swift */; };
 		1EE5DEA7249DEAD0004F0A98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5DEA6249DEAD0004F0A98 /* SceneDelegate.swift */; };
@@ -34,9 +36,11 @@
 		1E54427824FA3BDB00575B8E /* sikaku.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sikaku.JPG; sourceTree = "<group>"; };
 		1E58346924C2EA6B009C806E /* SavePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePhotoViewController.swift; sourceTree = "<group>"; };
 		1E683377267E33B700085431 /* sikaku2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sikaku2.jpg; sourceTree = "<group>"; };
+		1E77D1AC26B545ED00CBE353 /* Monochrome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Monochrome.jpg; sourceTree = "<group>"; };
+		1E77D1AD26B545EE00CBE353 /* SepiaTone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SepiaTone.jpg; sourceTree = "<group>"; };
+		1E77D1B026B5650100CBE353 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		1E9B849E258DDBFA00B5D4E5 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		1EB011D6264686BB006EBC8A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		1ED3A164256020F60082BBF7 /* share.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = share.JPEG; sourceTree = "<group>"; };
 		1ED3A16F25602C2A0082BBF7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1EE5DEA4249DEAD0004F0A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EE5DEA6249DEAD0004F0A98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,10 +98,12 @@
 				1EE5DEAD249DEAD9004F0A98 /* Assets.xcassets */,
 				1EE5DEAF249DEAD9004F0A98 /* LaunchScreen.storyboard */,
 				1EE5DEB2249DEAD9004F0A98 /* Info.plist */,
-				1ED3A164256020F60082BBF7 /* share.JPEG */,
 				1E683377267E33B700085431 /* sikaku2.jpg */,
 				1E54427824FA3BDB00575B8E /* sikaku.JPG */,
+				1E77D1AC26B545ED00CBE353 /* Monochrome.jpg */,
+				1E77D1AD26B545EE00CBE353 /* SepiaTone.jpg */,
 				1E51CE2F260B2F8C00D228C3 /* Photo Calendar.app */,
+				1E77D1B026B5650100CBE353 /* FilterCell.swift */,
 			);
 			path = TechPod;
 			sourceTree = "<group>";
@@ -185,9 +191,10 @@
 			files = (
 				1E683378267E33B800085431 /* sikaku2.jpg in Resources */,
 				1EE5DEB1249DEAD9004F0A98 /* LaunchScreen.storyboard in Resources */,
-				1ED3A165256020F60082BBF7 /* share.JPEG in Resources */,
 				1E54427924FA3BDB00575B8E /* sikaku.JPG in Resources */,
+				1E77D1AF26B545EE00CBE353 /* SepiaTone.jpg in Resources */,
 				1EE5DEAE249DEAD9004F0A98 /* Assets.xcassets in Resources */,
+				1E77D1AE26B545EE00CBE353 /* Monochrome.jpg in Resources */,
 				1EE5DEAC249DEAD0004F0A98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +250,7 @@
 			files = (
 				1EE5DF9824B09843004F0A98 /* CalendarViewController.swift in Sources */,
 				1E23B62C2515E3F300124338 /* PhotoCalenderCell.swift in Sources */,
+				1E77D1B126B5650100CBE353 /* FilterCell.swift in Sources */,
 				1EE5DEE424A86581004F0A98 /* MemoViewController.swift in Sources */,
 				1E58346A24C2EA6B009C806E /* SavePhotoViewController.swift in Sources */,
 				1EE5DEA9249DEAD0004F0A98 /* ViewController.swift in Sources */,
@@ -399,6 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = KARMKX7RDD;
 				INFOPLIST_FILE = TechPod/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -406,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 14.4;
+				MARKETING_VERSION = 14.5;
 				PRODUCT_BUNDLE_IDENTIFIER = changlaimari.Calender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -422,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = KARMKX7RDD;
 				INFOPLIST_FILE = TechPod/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -429,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 14.4;
+				MARKETING_VERSION = 14.5;
 				PRODUCT_BUNDLE_IDENTIFIER = changlaimari.Calender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
